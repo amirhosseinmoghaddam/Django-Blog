@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Django Blog</h1>
+    <hr>
+    <br>
+    <br>
+    {% for post in posts %}
+       <h1 style="font-size: 24px;">{{ post.title }}</h1>
+       <h6>{{ post.date }}</h6>
+       <a href="{% url 'detail' post.slug %}">Read full</a>
+       <hr>
+       <br>
+    {% endfor %}   
+</main>
+{% endblock %}
